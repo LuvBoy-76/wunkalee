@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
+
+$basic:#EFCB8F;
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    transition: .4s ease;
+    text-decoration: none;
+    font-family: 'Merriweather', serif; 
+    font-family: 'Merriweather', serif;
+    font-family: 'Noto Serif TC', serif;
+}
+
+
+.active{
+    position: fixed;
+}
+.header{
+    width: 100%;
+    height: 15vh;
+    z-index: 1000;
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000000;
+    .nav-logo{
+        margin:auto 0;
+        margin-left: 30px;
+        width: 120px;
+        height: 60px;
+        img{
+            width: 100%;
+        }
+    }
+    .navbar-links {
+        width: 70%;
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        li{
+            margin: 0 30px;
+            font-size: 24px;
+            color: #fff;
+        }
+        
+    }
+    .nav-hamburger{
+        width: 10%;
+        display: none;
+        cursor: pointer;
+        div{
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px;
+        }
+    }
+    
+}
+.nav-active{
+    transform: translateY(0%);
+}
+
+.banner{
+    width: 100%;
+    height: 85vh;
+    position: relative;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .banner-text{
+        text-align: center;
+    }
+    .banner-title{
+        color: $basic;
+        font-size: 70px;
+    }
+    .banner-btn{
+        text-align: center;
+        font-size: 20px;
+        border: 2px solid #fff;
+        padding: 10px 15px;
+        background:transparent;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        i{
+            font-size: 2px;
+            margin-left: 3px;
+        }
+    }
+    .banner-btn:hover{
+        background-color: $basic;
+        border: 2px solid $basic;
+        color: black;
+    }
+    
+}
+.banner::after{
+    content: '';
+    position: absolute;
+    top: 0;bottom: 0;left: 0;right: 0;
+    background:linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+      ), url(https://picsum.photos/1920/1080?random=24);
+    background-position: center;
+    background-size: cover;
+    z-index: -100;
+}
+
+.section{
+    width: 100%;
+}
+.storyAbout{
+    background-image: url(http://frankbakerart.com/wp-content/uploads/2012/11/white-gray-background-1.jpg);
+    background-attachment: fixed;
+    z-index: -100;
+    > h1{
+        width: 30%;
+        margin: 0 auto 0;
+        padding-top: 50px;
+        border-bottom: 3px solid black;
+        text-align: center;
+    }
+    > p{
+        padding-top: 10px;
+        padding-bottom: 50px;
+        text-align: center;
+        width: 30%;
+        margin: auto;
+    }
+    .wrapper{
+        display: flex;
+        width: 100%;
+        padding: 30px;
+        position: relative;
+        justify-content: flex-end;
+        z-index: 10;
+        > img{
+            margin: 30px auto;
+            left: 50px;
+        }
+        .text{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            .textTitle{
+                width: 100%;
+                text-align: center;
+                padding: 10px 10px 0 10px;
+                color: #d63232;top: 20%
+            }
+            .textContent{
+                padding: 0px 10px 10px 10px;
+                color: #dd2929;
+            }
+        }
+    }
+    .wrapper::after{
+        content: '';
+        position: absolute;
+        top: 0;bottom: 0;left: 0;right: 0;
+        z-index: -50;
+        background-image:linear-gradient(
+            rgba(0, 0, 0, 0.7), 
+            rgba(0, 0, 0, 0.7)
+          ), url(https://img.onl/08DgT);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+}
+.menu{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+    .menu-items{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        .item{
+            width: 50%;
+            position: relative;
+            img{
+                width: 100%;
+                vertical-align: bottom;
+            }
+            .item-text{
+                position: absolute;
+                color: #ffffff;
+                background: rgba(0,0,0,.5);
+                top: 0;bottom: 0;left: 0;right: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                font-size: 22px;
+                padding: 30px;
+                opacity: 0;
+                transform: translateX(100%);
+                color: $basic;
+                h1{
+                    border-top: 3px solid $basic;
+                }
+                
+            }
+        }
+        .item:hover >.item-text{
+            opacity: 1;
+            transform: translateX(0%);
+        }
+        .item:hover >h1::after{
+            
+            transform: scaleX(3);
+        }
+    }
+}
+.menu::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(http://frankbakerart.com/wp-content/uploads/2012/11/white-gray-background-1.jpg);
+    background-attachment: fixed;
+    z-index: -100;
+}
+.menu-pdf{
+    background-image: url(http://frankbakerart.com/wp-content/uploads/2012/11/white-gray-background-1.jpg);
+    background-attachment: fixed;
+    z-index: -100;
+    position: relative;
+    width: 100%;
+    .carousel-slider{
+        width: 50%;
+        margin: auto;
+        padding: 20px 0;
+        display: flex;
+        overflow: hidden;
+    }
+    .prevBtn{
+        position: absolute;
+        top: 50%;
+        left: 0;
+    }
+    .nextBtn{
+        position: absolute;
+        top: 50%;
+        right: 0;
+    }
+}
+.menu-pdf::after{
+    content: '';
+    position: absolute;
+    top: 0;bottom: 0;left: 0;right: 0;
+    z-index: -50;
+    background-image:linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+      ), url(https://img.onl/08DgT);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.geo-location {
+    width: 80%;
+    margin: 30px auto 0;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    .location-text{
+        background-color: #faa;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        padding-left: 20px;
+        .info{
+            letter-spacing: 2px;
+        }
+    }
+    .google-api{
+        width: 400px;
+        height: 400px;
+        border: 5px solid #000000;
+    }
+}
+.footer{
+    background-color: #000000;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+        a{
+            padding-right: 30px;
+            color: #ffffff;
+            position: relative;
+        }
+        a:last-child::before{
+            opacity: 0;
+        }
+        a::before{
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 15px;
+            background: #fff;
+            right: 0;
+            // left: 0;
+            top: 50%;
+            margin-top: -7.5px;
+            margin-right: 15px;
+        }
+        
+
+}
+
+
+@media screen and (max-width: 768px){
+    
+    .header{
+        width: 100%;
+        height: 6vh;
+        z-index: 1000;
+        display: block;
+        display: flex;
+        justify-content: space-between  ;
+        align-items: center;
+        position: fixed;
+        background-color: #000000;
+        .nav-logo{
+            width: 80px;
+            height: 40px;
+        }
+        .navbar-links{  
+            position: absolute;
+            right: 0;
+            height: 50vh;
+            top: 6vh;
+            width: 100%;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform .5s ease-in;
+            z-index: 500;
+            li{
+                font-size: 24px;
+                border-bottom: 2px solid #fff;
+                color: #ffffff;
+                opacity: 0;
+            }
+        }
+        .nav-active{
+            transform: translateX(0%);
+            li{
+                opacity: 1;
+            }
+        }
+        .nav-hamburger{
+            display: block;
+            div{
+                width: 30px;
+                height: 3px;
+                background-color: #fff;
+                margin: 5px;
+            }
+        }
+
+    }
+    .banner{
+        .banner-title{
+            font-size: 50px;
+        }
+    }
+    .storyAbout{
+        > h1{
+                width: 70%;
+                margin: auto;
+            }
+        > p{
+                width: 70%;
+                margin: auto;
+            }    
+        .wrapper{
+            flex-direction: column;
+            > img{
+                width: 100%;
+            }
+            .text{
+                width: 100%;
+            }
+        }
+    }
+    .menu{
+        .menu-items{
+            display: flex;
+            flex-direction: column;
+            .item{
+                width: 100%;
+            }
+        }
+    }
+    .geo-location{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 30px;
+        .location-text{
+            width: 70%;
+            margin: auto;
+        }
+        .google-api{
+            width: 70%;
+            border: 5px solid #000000;
+            margin: auto;
+        }
+    }
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-10px, 10px);
+    }
+    
+    .toggle .line2 {
+        opacity: 0;
+    }
+    
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-1px, -1px);
+    }
+
+}
