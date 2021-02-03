@@ -65,21 +65,19 @@
             document.querySelector('#itemLocation').innerHTML = html;
         })
 
-    //slider
 
-    const nextBtn = document.querySelector('.nextBtn');
-    console.log(nextBtn); 
-    newFunction(nextBtn);
+    //menu
+    let mainPhoto = document.querySelector('.mainPhoto');
+    let photos = document.querySelectorAll('.photos .menuItem');
 
-
-    
-    
-
+    function changeHandler(){
+        mainPhoto.innerHTML = `<img src="${this.dataset.src}" alt="mainMenuPhoto" class="mainImg">`
+    };
+    // console.log(photos);
+    photos.forEach((photo)=>{
+        photo.addEventListener('click', changeHandler);
+    });
 })();
 
-function newFunction(nextBtn) {
-    nextBtn.addEventListener('click', function () {
-        alert('hello');
-    });
-}
+
 
