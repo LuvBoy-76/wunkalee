@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://luvboy-76.github.io/wunkalee/wunkalee.css">
+    <link rel="stylesheet" href="/style/wunkalee.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
@@ -84,14 +84,15 @@
 
 
     <div class="menu-pdf">
-            <div class="mainShow">
-                <div class="mainPhoto"><img src="https://picsum.photos/500/800?random=1" alt=""></div>
-            </div>
-            <ul class="photos">
-                <div class="menuItem" data-src="https://picsum.photos/500/800?random=1"><img src="https://picsum.photos/500/800?random=1" alt=""></div>
-                <div class="menuItem" data-src="https://picsum.photos/500/800?random=2"><img src="https://picsum.photos/500/800?random=2" alt=""></div>
-                <div class="menuItem" data-src="https://picsum.photos/500/800?random=3"><img src="https://picsum.photos/500/800?random=3" alt=""></div>
-            </ul>
+        <div class="carousel-slider">
+                <img src="https://picsum.photos/800/500?random=3" id="last-clone" alt="">
+                <img src="https://picsum.photos/800/500?random=1" alt="">
+                <img src="https://picsum.photos/800/500?random=2" alt="">
+                <img src="https://picsum.photos/800/500?random=3" alt="">
+                <img src="https://picsum.photos/800/500 ?random=1" id="first-clone" alt="">
+        </div>
+        <button id="prevBtn" class="prevBtn">prevBtn</button>
+        <button id="nextBtn" class="nextBtn">nextBtn</button>
     </div>
 
     <div class="section geo-location" id="geo-location">
@@ -101,10 +102,7 @@
             <div class="info location">803高雄市鹽埕區堀江街11-2號</div>
             <div class="info phonecall">07 551-1568</div>
         </div>
-        <div class="kao-api" id="kao-map">
-            <h1>附近景點</h1>
-            <div class="itemLocation" id="itemLocation"></div>
-        </div>
+        <div class="google-api" id="geo-map"></div>
     </div>
    
 
@@ -121,11 +119,11 @@
     </div>
 
 
-
-    
-
-    <script src="https://luvboy-76.github.io/wunkalee/wunkalee.js"></script>
-
+    <script src="wunkalee.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW-9RK9rLfOZmI_pltaEJBJuriCf-b9po&callback=initMap"
+      defer
+    ></script>
 </body>
 </html>
 

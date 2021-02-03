@@ -1,9 +1,11 @@
 //header sticky navbar
 (function(){
+
     const banner = document.querySelector('.banner')
     const bannerHeight = banner.offsetHeight;
     const heightTrigger = (bannerHeight / 3) * 2;
     const header = document.querySelector('.header');
+    
     function scrollHandler(){
         if(window.scrollY >= heightTrigger){
             header.classList.add('active');
@@ -14,6 +16,7 @@
     window.addEventListener('scroll', scrollHandler);
 
     //navbar
+
     function navSlide() {
         const burger = document.querySelector(".nav-hamburger");
         const nav = document.querySelector(".navbar-links");
@@ -36,48 +39,19 @@
     }
     navSlide();
     
-    // API
-    let src = "https://api.kcg.gov.tw/api/service/Get/9c8e1450-e833-499c-8320-29b36b7ace5c";
-    let items = [];
-    let html;
-    fetch(src)
-        .then((res) =>{
-            return res.json();
-        }).then(result => {
-            // console.log(result);
-            items.push(result.data.XML_Head.Infos.Info[0]);
-            items.push(result.data.XML_Head.Infos.Info[10]);
-            items.push(result.data.XML_Head.Infos.Info[81]);
-            // console.log(items);
-            html = items.map((item)=>{
-                const itemPicture1 = item.Picture1;
-                const itemName = item.Name;
-                const itemContent = item.Opentime;
-                return `
-                <div class="itemList">
-                    <div class="itemPicture"><img src='${itemPicture1}'></div>
-                    <div class="itemName">${itemName}</div>
-                    <div class="itemContent">${itemContent}</div>
-                </div>
-                `
-            }).join('');
-            // console.log(html);
-            document.querySelector('#itemLocation').innerHTML = html;
-        })
+    
+    //google api
 
+    let map;
 
-    //menu
-    let mainPhoto = document.querySelector('.mainPhoto');
-    let photos = document.querySelectorAll('.photos .menuItem');
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("geo-map"), {
+          center: { lat: -34.397, lng: 150.644 },
+          zoom: 8,
+        });
+      }
+    
+    
 
-    function changeHandler(){
-        mainPhoto.innerHTML = `<img src="${this.dataset.src}" alt="mainMenuPhoto" class="mainImg">`
-    };
-    // console.log(photos);
-    photos.forEach((photo)=>{
-        photo.addEventListener('click', changeHandler);
-    });
 })();
-
-
 
