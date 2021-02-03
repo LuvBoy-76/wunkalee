@@ -40,7 +40,39 @@
     navSlide();
     
     
-    //google api
+    // API
+
+    let src = "https://api.kcg.gov.tw/api/service/Get/9c8e1450-e833-499c-8320-29b36b7ace5c";
+    let items = [];
+    let html;
+
+    fetch(src)
+        .then((res) =>{
+            return res.json();
+        }).then(result => {
+            // console.log(result);
+            items.push(result.data.XML_Head.Infos.Info[0]);
+            items.push(result.data.XML_Head.Infos.Info[10]);
+            items.push(result.data.XML_Head.Infos.Info[81]);
+            // console.log(items);
+            html = items.map((item)=>{
+                const itemPicture1 = item.Picture1;
+                const itemName = item.Name;
+                const itemContent = item.Opentime;
+                return `
+                <div class="itemList">
+                    <div class="itemPicture"><img src='${itemPicture1}'></div>
+                    <div class="itemName">${itemName}</div>
+                    <div class="itemContent">${itemContent}</div>
+                    
+                </div>
+                `
+            }).join('');
+            console.log(html);
+            document.querySelector('#itemLocation').innerHTML = html;
+            
+
+        })
 
     
     
