@@ -39,6 +39,38 @@
     }
     navSlide();
     
+    let spot;
+    let src = "https://api.kcg.gov.tw/api/service/Get/9c8e1450-e833-499c-8320-29b36b7ace5c";
+    
+    let item = [];
+    let html;
+
+    
+    fetch(src)
+        .then(Response => Response.json())
+        .then( result => {
+            // console.log(result);
+             item.push(result.data.XML_Head.Infos.Info[0]);
+             item.push(result.data.XML_Head.Infos.Info[10]);
+             item.push(result.data.XML_Head.Infos.Info[81]);
+            //  console.log(item);
+            html = item.map(data =>{
+                const itemPicture = data.Picture1;
+                const itemTitle = data.Name;
+                const itemContent = data.Opentime;
+                return `
+                    <div class="apiPicture">
+                             <img src="${itemPicture}">
+                    <div>
+                    <div class="apiTitle">${itemTitle}<div>
+                    <div class="apiText">${itemContent}<div>
+                `
+            }).join('');
+            let kaoWrapper = document.querySelector('.KAO-api').innerHTML = html;
+        });       
+             
+           
+            
 
 })();
 
