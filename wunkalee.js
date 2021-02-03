@@ -1,11 +1,9 @@
 //header sticky navbar
 (function(){
-
     const banner = document.querySelector('.banner')
     const bannerHeight = banner.offsetHeight;
     const heightTrigger = (bannerHeight / 3) * 2;
     const header = document.querySelector('.header');
-    
     function scrollHandler(){
         if(window.scrollY >= heightTrigger){
             header.classList.add('active');
@@ -16,7 +14,6 @@
     window.addEventListener('scroll', scrollHandler);
 
     //navbar
-
     function navSlide() {
         const burger = document.querySelector(".nav-hamburger");
         const nav = document.querySelector(".navbar-links");
@@ -39,13 +36,10 @@
     }
     navSlide();
     
-    
     // API
-
     let src = "https://api.kcg.gov.tw/api/service/Get/9c8e1450-e833-499c-8320-29b36b7ace5c";
     let items = [];
     let html;
-
     fetch(src)
         .then((res) =>{
             return res.json();
@@ -64,18 +58,28 @@
                     <div class="itemPicture"><img src='${itemPicture1}'></div>
                     <div class="itemName">${itemName}</div>
                     <div class="itemContent">${itemContent}</div>
-                    
                 </div>
                 `
             }).join('');
-            console.log(html);
+            // console.log(html);
             document.querySelector('#itemLocation').innerHTML = html;
-            
-
         })
+
+    //slider
+
+    const nextBtn = document.querySelector('.nextBtn');
+    console.log(nextBtn); 
+    newFunction(nextBtn);
+
 
     
     
 
 })();
+
+function newFunction(nextBtn) {
+    nextBtn.addEventListener('click', function () {
+        alert('hello');
+    });
+}
 
