@@ -6,9 +6,11 @@
     const header = document.querySelector('.header');
     function scrollHandler(){
         if(window.scrollY >= heightTrigger){
-            header.classList.add('active');
+            header.classList.remove('header-active');
+            header.classList.add('header-trigger');
         }else{
-            header.classList.remove('active');
+            header.classList.add('header-active');
+            header.classList.remove('header-trigger');
         }
     }
     window.addEventListener('scroll', scrollHandler);

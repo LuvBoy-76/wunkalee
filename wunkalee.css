@@ -13,9 +13,9 @@
   font-family: 'Merriweather', serif;
   font-family: 'Noto Serif TC', serif;
 }
-
-.active {
-  position: fixed;
+.header-active {
+  position: absolute;
+  background: transparent;
 }
 
 .header {
@@ -31,7 +31,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.header-trigger{
+  position: fixed;
   background-color: #000000;
+
 }
 
 .header .nav-logo {
@@ -86,7 +90,7 @@
 
 .banner {
   width: 100%;
-  height: 85vh;
+  height: 100vh;
   position: relative;
   color: #ffffff;
   display: -webkit-box;
