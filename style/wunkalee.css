@@ -156,7 +156,7 @@
 }
 
 .storyAbout .wrapper {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(pic\italian-food-background-1.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/pic/IMG_5674.jpg);
   background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
