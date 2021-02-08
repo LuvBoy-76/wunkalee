@@ -40,18 +40,26 @@
     
     // API
     let src = "https://api.kcg.gov.tw/api/service/Get/9c8e1450-e833-499c-8320-29b36b7ace5c";
-    let items = [];
+    let items;
     let html;
+    let target = [];
     fetch(src)
         .then((res) =>{
             return res.json();
         }).then(result => {
-            // console.log(result);
-            items.push(result.data.XML_Head.Infos.Info[0]);
-            items.push(result.data.XML_Head.Infos.Info[10]);
-            items.push(result.data.XML_Head.Infos.Info[81]);
-            // console.log(items);
-            html = items.map((item)=>{
+            items = result.data.XML_Head.Infos.Info;
+
+            //map 出只有名字的名單 取出資料index
+            let newList = items.map((item) => item.Name);
+            let data1 = newList.indexOf('西子灣風景區');
+            let data2 = newList.indexOf('駁二藝術特區');
+            let data3 = newList.indexOf('高雄港');
+
+            target.push(items[data1], items[data2], items[data3]);
+            console.log(target);
+
+
+            html = target.map((item)=>{
                 const itemPicture1 = item.Picture1;
                 const itemName = item.Name;
                 const itemContent = item.Opentime;
@@ -63,7 +71,6 @@
                 </div>
                 `
             }).join('');
-            // console.log(html);
             document.querySelector('#itemLocation').innerHTML = html;
         })
 

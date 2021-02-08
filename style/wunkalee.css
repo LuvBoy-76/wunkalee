@@ -113,35 +113,7 @@
   font-size: 70px;
 }
 
-.banner .banner-btn {
-  text-align: center;
-  font-size: 20px;
-  border: 2px solid #fff;
-  padding: 10px 15px;
-  background: transparent;
-  color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: auto;
-}
 
-.banner .banner-btn i {
-  font-size: 2px;
-  margin-left: 3px;
-}
-
-.banner .banner-btn:hover {
-  background-color: #EFCB8F;
-  border: 2px solid #EFCB8F;
-  color: black;
-}
 
 .banner::after {
   content: '';
@@ -184,6 +156,8 @@
 }
 
 .storyAbout .wrapper {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(pic\italian-food-background-1.jpg);
+  background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,7 +167,6 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  z-index: 10;
 }
 
 .storyAbout .wrapper > img {
@@ -232,20 +205,7 @@
   color: #dd2929;
 }
 
-.storyAbout .wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -50;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(https://img.onl/08DgT);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://img.onl/08DgT);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
+
 
 .menu {
   display: -webkit-box;
@@ -329,10 +289,8 @@
 
 
 .menu-pdf {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(https://img.onl/08DgT);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(pic\italian-food-background-1.jpg);
   background-attachment: fixed;
-  background: linear-gradient();
-  /* z-index: -100; */
   position: relative;
   width: 100%;
   display: flex;
@@ -472,7 +430,7 @@
   margin-right: 15px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
   .header {
     width: 100%;
     height: 6vh;
@@ -672,5 +630,4 @@
             transform: rotate(45deg) translate(-1px, -1px);
   }
 }
-/*# sourceMappingURL=wunkalee.css.map */
-/*# sourceMappingURL=wunkalee.css.map */
+
