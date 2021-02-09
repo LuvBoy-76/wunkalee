@@ -482,6 +482,7 @@
     transition: transform .5s ease-in;
     transition: transform .5s ease-in, -webkit-transform .5s ease-in;
     z-index: 500;
+    opacity: 0;
   }
   .header .navbar-links li {
     font-size: 24px;
