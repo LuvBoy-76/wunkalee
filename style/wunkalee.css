@@ -13,6 +13,7 @@
   font-family: 'Merriweather', serif;
   font-family: 'Noto Serif TC', serif;
 }
+
 .header-active {
   position: absolute;
   background: transparent;
@@ -35,13 +36,6 @@
 .header-trigger{
   position: fixed;
   background-color: #000000;
-}
-
-.header .nav-logo {
-  margin: auto 0;
-  margin-left: 30px;
-  width: 120px;
-  height: 60px;
 }
 
 .header .nav-logo img {
@@ -155,38 +149,44 @@
   background-attachment: fixed;
   background-size: cover;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
+  height: 400px;
+  padding: 20px;
+}
+.storyAbout .wrapperContainer {
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  padding: 10px;
+}
+.storyAbout .wrapperImage {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.storyAbout .wrapperImage > img {
+  width: 100%;
+  height: auto;
+}
+
+.storyAbout .text {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 30px;
   position: relative;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
 }
 
-.storyAbout .wrapper > img {
-  margin: 30px auto;
-  left: 50px;
-}
-
-.storyAbout .wrapper .text {
-  width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 30px;
-}
-
-.storyAbout .wrapper .text .textTitle {
+.storyAbout .text .textTitle {
   width: 100%;
   text-align: center;
   padding: 10px 10px 0 10px;
@@ -194,7 +194,7 @@
   top: 20%;
 }
 
-.storyAbout .wrapper .text .textContent {
+.storyAbout .text .textContent {
   padding: 0px 10px 10px 10px;
   color: #dd2929;
 }
@@ -231,10 +231,13 @@
   height: 400px;
   position: relative;
 }
-
+.menu .menu-items .itemPic{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
 .menu .menu-items .item img {
   width: 100%;
-  vertical-align: bottom;
 }
 
 .menu .menu-items .item .item-text {
@@ -302,7 +305,6 @@
 .menu-pdf .mainShow .mainPhoto{
   width: 400px;
   height: auto;
-  border: 3px solid pink;
   overflow: hidden;
 }
 .menu-pdf .mainShow img{
@@ -316,7 +318,6 @@
   width: 100px;
   height: 100px;
   overflow: hidden;
-  border: 3px solid pink;
   margin: 20px;
   z-index: 10;
 }
@@ -425,17 +426,16 @@
   margin-top: -7.5px;
   margin-right: 15px;
 }
-
-@media screen and (max-width: 1024px){
-  .header {
-    height: 10vh;
-  }
-
-
-
+.logo-pic{
+  width: 120px;
+  height: 60px;
+  overflow: hidden;
+}
+.logo-pic img{
+  width: 100%;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
   .header {
     width: 100%;
     height: 6vh;
@@ -522,11 +522,14 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .storyAbout .wrapperContainer{
+    width: 100%;
+  }
   .storyAbout .wrapper > img {
     width: 100%;
   }
-  .storyAbout .wrapper .text {
-    width: 100%;
+  .storyAbout .text {
+    width: 70%;
   }
   
   .menu .menu-items {
@@ -588,18 +591,45 @@
   }
   .geo-location .itemLocation{
     display: flex;
-    flex-direction: column;
     padding-top: 0px;
+    
   }
   .geo-location .itemList{
     width: 80%;
-    margin:  30px auto;
+    margin:  30px 10px;
     height: auto;
   }
   .geo-location .itemPicture{
     height: 50%;
   }
-  
+  }
+  @media screen and (max-width:767px){
+    .storyAbout .wrapperContainer{
+      width: 100%;
+      flex-direction: column;
+    }
+    .storyAbout .wrapperImage{
+      margin: auto;
+      width: 70%;
+    }
+    .storyAbout .text{
+      padding: 0;
+      margin: auto;
+    }
+    .geo-location .itemLocation{
+      flex-direction: column;
+    }
+    .geo-location .itemList{
+      width: 60%;
+      margin: 10px auto;
+    }
+  }
+  @media screen and (max-width:414px){
+    .storyAbout .text{
+      width: 80%;
+      padding: 0;
+      margin: auto;
+    }
   }
   @-webkit-keyframes navLinkFade {
     from {
