@@ -35,7 +35,6 @@
 .header-trigger{
   position: fixed;
   background-color: #000000;
-
 }
 
 .header .nav-logo {
@@ -112,9 +111,6 @@
   color: #EFCB8F;
   font-size: 70px;
 }
-
-
-
 .banner::after {
   content: '';
   position: absolute;
@@ -122,8 +118,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(https://picsum.photos/1920/1080?random=24);
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://picsum.photos/1920/1080?random=24);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/pic/bannerImage.jpg);
   background-position: center;
   background-size: cover;
   z-index: -100;
@@ -156,10 +151,9 @@
 }
 
 .storyAbout .wrapper {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/pic/IMG_5674.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/pic/backImage.jpg);
   background-attachment: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-size: cover;
   display: flex;
   width: 100%;
   padding: 30px;
@@ -234,6 +228,7 @@
 
 .menu .menu-items .item {
   width: 50%;
+  height: 400px;
   position: relative;
 }
 
@@ -289,8 +284,10 @@
 
 
 .menu-pdf {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(pic\italian-food-background-1.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  url(/pic/backImage.jpg);
   background-attachment: fixed;
+  background-size: cover;
   position: relative;
   width: 100%;
   display: flex;
@@ -306,7 +303,8 @@
 .menu-pdf .mainShow .mainPhoto{
   width: 400px;
   height: auto;
-  border: 3px solid pink;overflow: hidden;
+  border: 3px solid pink;
+  overflow: hidden;
 }
 .menu-pdf .mainShow img{
   width: 100%;
@@ -330,7 +328,6 @@
 .geo-location {
   background-image: url(http://frankbakerart.com/wp-content/uploads/2012/11/white-gray-background-1.jpg);
   background-attachment: fixed;
-  z-index: -100;
   width: 100%;
   margin: 0 auto 0;
   padding: 50px;
@@ -430,11 +427,19 @@
   margin-right: 15px;
 }
 
+@media screen and (max-width: 1024px){
+  .header {
+    height: 10vh;
+  }
+
+
+
+}
+
 @media screen and (max-width: 768px){
   .header {
     width: 100%;
     height: 6vh;
-    z-index: 1000;
     display: block;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -536,12 +541,13 @@
   }
   .menu .menu-items .item {
     width: 100%;
+    height: 200px;
   }
   menu .menu-items .item .item-text h1{
     font-size: 22px;
   }
   .menu-pdf {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(https://img.onl/08DgT);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(/pic/backImage.jpg);
     background-attachment: fixed;
     background: linear-gradient();
     /* z-index: -100; */
@@ -561,6 +567,9 @@
     justify-content: center;
     width: 100%;
   }
+  .menu-pdf .menuItem{
+    height: 60px;
+  }
   .geo-location {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -571,7 +580,6 @@
             flex-direction: column;
     width: 100%;
     padding: 0;
-    margin-bottom: 30px;
   }
   .geo-location .location-text {
     width: 80%;
