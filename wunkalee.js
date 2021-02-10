@@ -56,7 +56,7 @@
             let data3 = newList.indexOf('高雄港');
 
             target.push(items[data1], items[data2], items[data3]);
-            console.log(target);
+            // console.log(target);
 
 
             html = target.map((item)=>{
