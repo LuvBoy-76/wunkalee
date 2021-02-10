@@ -112,7 +112,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/pic/bannerImage.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://ppt.cc/f58FHx);
   background-position: center;
   background-size: cover;
   z-index: -100;
@@ -145,7 +145,7 @@
 }
 
 .storyAbout .wrapper {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/pic/backImage.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://ppt.cc/fq0Smx);
   background-attachment: fixed;
   background-size: cover;
   display: flex;
@@ -287,7 +287,7 @@
 
 
 .menu-pdf {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/pic/backImage.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://ppt.cc/fq0Smx);
   background-attachment: fixed;
   background-size: cover;
   position: relative;
